@@ -1,19 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from 'react';
+
+import { DoogleService } from './services/doogle'
+import { Navbar } from './components/Navbar';
+import { RenderCards } from './components/RenderCards';
+
 
 class App extends Component {
+
+  state = {
+    words : [],
+    mode  : 'EMPTY'
+  }
+
+  fetchWordsFromApi = data =>  {
+    DoogleService(data).then( response => {
+      this.setState(response);
+    });
+  }
+
+  changeHandler = event => {
+    if (!event.target.value) {
+      this.setState({
+        mode: "EMPTY"
+      })
+    }
+  }
+
+  submitHandler = event => {
+    this.setState({ mode: "PENDING" })
+    const data = new FormData(event.target);
+    this.fetchWordsFromApi(data);
+    event.preventDefault();
+  }
+
   render() {
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Fragment>
+        <Navbar submitHandler={this.submitHandler}
+                changeHandler={this.changeHandler} />
+        <div className="container">
+          <RenderCards mode={this.state.mode} words={this.state.words} />
+        </div>
+      </Fragment>
     );
   }
 }

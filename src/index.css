@@ -1,5 +1,64 @@
 body {
+  background-image: url("images/doodles.png");
+  background-repeat: repeat;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.navbar {
+  margin-top: 2em;
+  height: 4em;
+
+}
+
+.navbar-brand {
+  font-size: 40px;
+}
+
+.subtitle {
+  margin-left: .5em;
+}
+
+#word_name {
+  width: 20em;
+}
+
+.jumbotron {
+  margin: 40px auto;
+  width: 70%;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+.card {
+  margin: 40px auto;
+  width: 70%;
+  border: none;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+.card-header {
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+}
+
+.card-body {
+  background-color: white;
+}
+
+.badge {
+  font-size: 12px;
+}
+
+.spinner-wrapper {
+  text-align: center;
+}
+
+.spinner {
+  margin: 0 auto;
 }
