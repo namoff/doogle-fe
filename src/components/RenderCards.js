@@ -6,13 +6,13 @@ import { Spinner } from './Spinner';
 
 
 export const RenderCards = (props) => {
-    if (props.mode === "EMPTY") {
-      return <StartCard />;
-    }
-    else if (props.mode === "PENDING") {
-      return <Spinner />;
-    }
-    else if (props.mode === "SUCCESS") {
+
+  switch (props.mode) {
+    case "EMPTY":
+      return <StartCard />
+    case "PENDING":
+      return <Spinner />
+    case "SUCCESS":
       return (
         <div id="word-cards">
           {props.words.map( (word, i) => (
@@ -20,14 +20,11 @@ export const RenderCards = (props) => {
           ))}
         </div>
       );
-    }
-    else if (props.mode === "ERROR-NOT-FOUND"){
-      return <ErrorCard notFound={true} />
-    }
-    else if (props.mode === "ERROR-UNKNOWN"){
+    case "ERROR-UNKOWN":
       return <ErrorCard notFound={false} />
-    }
-    else {
-      return true
-    }
+    case "ERROR-NOT-FOUND":
+    default:
+      return <ErrorCard notFound={true} />
+  }
+
 }

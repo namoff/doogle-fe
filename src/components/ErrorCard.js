@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ErrorCard = (props) => {
+export const ErrorCard = props => {
 
   const errorMessage = props.notFound
                      ? 'That word doesn\'t seem to exist...yet.'

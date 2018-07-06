@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Navbar = (props) => {
+export const Navbar = props => {
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -33,7 +33,8 @@ export const Navbar = (props) => {
                      onChange={props.changeHandler}/>
               <button className="btn btn-info my-2 my-sm-0"
                       id="submit"
-                      type="submit">
+                      type="submit"
+                      disabled={props.mode === "PENDING"}>
                       Search
               </button>
             </form>

@@ -38,7 +38,8 @@ class App extends Component {
     return (
       <Fragment>
         <Navbar submitHandler={this.submitHandler}
-                changeHandler={this.changeHandler} />
+                changeHandler={this.changeHandler}
+                mode={this.state.mode} />
         <div className="container">
           <RenderCards mode={this.state.mode} words={this.state.words} />
         </div>

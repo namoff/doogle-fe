@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const WordCard = (props) => {
+export const WordCard = props => {
 
     return (
       <div className="card bg-info mb-3">
