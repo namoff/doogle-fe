@@ -6,7 +6,7 @@ describe('App()', async () => {
   let browser;
   let page;
   let site = 'http://localhost:3001/';
-  let api = 'http://localhost:3000/';
+  let api = 'https://immense-refuge-57175.herokuapp.com/';
 
   beforeAll(async () => {
     browser = await puppeteer.launch({

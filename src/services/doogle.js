@@ -1,6 +1,6 @@
 export const DoogleService = (data) => {
 
-  const url = "http://localhost:3000/"
+  const url = "https://immense-refuge-57175.herokuapp.com/"
 
   return fetch(url, {
       method: "POST",
