@@ -64,18 +64,3 @@ describe('App()', async () => {
   });
 
 });
-
-
-
-
-// test('when the word doesnt exist', async () => {
-//   await page.goto(site);
-//
-//   await page.click('#word_name')
-//   await page.type('#word_name', 'doesntexist')
-//   await page.click('#submit')
-//
-//   await page.waitForSelector('.card-body')
-//   const html = await page.$eval('.card-body', e => e.innerHTML);
-// 	expect(html).toBe('That word doesn\'t seem to exist...yet.');
-// }, 10000)
